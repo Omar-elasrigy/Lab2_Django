@@ -1,0 +1,12 @@
+{% block head_content %}
+    <h1>Delete Page</h1>
+{% endblock %}
+
+{% block main_content %}
+<h1>Are you sure you want to delete "{{ trainee.name }}"?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Confirm</button>
+        <button><a href="{% url 'list' %}" style="text-decoration: none;color: black;">Cancel</a></button>
+    </form>
+{% endblock %}
